@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Seller\SellerController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +18,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.index');
+});
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return Redirect::to('/');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::middleware(['admin'])->group(function () {
+        Route::get('admin', [AdminController::class, 'index']);
+    });
+
+    Route::middleware(['seller'])->group(function () {
+        Route::get('seller', [SellerController::class, 'index']);
+    });
+});
