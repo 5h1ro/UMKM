@@ -61,12 +61,12 @@
     </div>
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
         <div style="height: 8vh;"></div>
-
+        {{-- slick --}}
         <div class="container-fluid py-4" style="position: relative;">
             <div class="row justify-content-center">
+                {{-- slick --}}
                 <div class="col-md-9 align-self-center">
-                    <div class=" height-300 slider bg-cover border-radius-2xl overflow-hidden"
-                        style="background-color: blueviolet">
+                    <div class=" height-300 slider bg-cover border-radius-2xl overflow-hidden">
                         <div class="height-300 overflow-hidden  position-relative bg-cover col"
                             style="background-image: url('{{ asset('img') }}/ivancik.jpg');">
                             <span class="mask bg-gradient-dark"></span>
@@ -100,19 +100,117 @@
                             </div>
                         </div>
                     </div>
-                    <div class="arrow_prev" style="transform: scale(3)">
+                    <div class="arrow_prev prev">
                         <button class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
                             style="box-shadow: none">
                             <i class="fas fa-chevron-circle-left"></i>
                         </button>
                     </div>
-                    <div class="arrow_next" style="transform: scale(3)">
+                    <div class="arrow_next next">
                         <button class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
                             style="box-shadow: none">
                             <i class="fas fa-chevron-circle-right"></i>
                         </button>
                     </div>
                 </div>
+                {{-- slick end --}}
+
+                {{-- categories --}}
+                <div class="col-md-9 align-self-center my-4 height-200">
+                    <div class="height-300 categories_slider bg-cover row">
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/male_fashion.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">Fashion Pria</h6>
+                            </div>
+                        </div>
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/female_fashion.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">Fashion Wanita</h6>
+                            </div>
+                        </div>
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/baby_fashion.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">Fashion bayi & anak</h6>
+                            </div>
+                        </div>
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/Furniture.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">Furniture</h6>
+                            </div>
+                        </div>
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/food.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">food</h6>
+                            </div>
+                        </div>
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/otomotif.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">otomotif</h6>
+                            </div>
+                        </div>
+                        <div class="card justify-content-center mx-2 mb-6 mt-2">
+                            <div class="card-header mx-4 p-3 text-center justify-content-center">
+                                <div class="icon icon-shape icon-lg bg-gradient-primary shadow pt-2 ps-2">
+                                    <img src="{{ asset('img/ring.svg') }}" style="width: 80%; height: 80%;"
+                                        class="opacity-9">
+                                </div>
+                            </div>
+                            <div class="card-body pt-0 p-3 text-center" style="min-height: 68px; max-height: 68px">
+                                <h6 class="text-center mb-0">Pernikahan</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow_prev_categories prev_categories">
+                        <button class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
+                            style="box-shadow: 0px 0px 40px 5px grey;">
+                            <img src="{{ asset('img/kiri.png') }}">
+                        </button>
+                    </div>
+                    <div class="arrow_next_categories next_categories">
+                        <button class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
+                            style="box-shadow: 0px 0px 40px 5px grey;">
+                            <img src="{{ asset('img/kanan.png') }}">
+                        </button>
+                    </div>
+                </div>
+                {{-- end categories --}}
+
             </div>
         </div>
         <footer class="footer pt-3">

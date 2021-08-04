@@ -116,12 +116,73 @@
 
 .arrow_prev {
     position: absolute;
-    top: 48%;
+    top: 23%;
     left: 16%;
+}
+
+.prev {
+    position: absolute;
+    top: 23%;
+    left: 16%;
+    transform: scale(3);
+    transition: transform 0.2s;
+}
+
+.prev:hover {
+    transform: scale(3.5)
 }
 
 .arrow_next {
     position: absolute;
-    top: 48%;
+    top: 23%;
     right: 16%;
+}
+
+.next {
+    position: absolute;
+    top: 23%;
+    right: 16%;
+    transform: scale(3);
+    transition: transform 0.2s;
+}
+
+.next:hover {
+    transform: scale(3.5)
+}
+
+
+.arrow_prev_categories {
+    position: absolute;
+    top: 70%;
+    left: 15%;
+}
+
+.prev_categories {
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    transform: scale(0.8);
+    transition: transform 0.2s;
+}
+
+.prev_categories:hover {
+    transform: scale(0.9)
+}
+
+.arrow_next_categories {
+    position: absolute;
+    top: 70%;
+    right: 15%;
+}
+
+.next_categories {
+    position: absolute;
+    top: 70%;
+    right: 15%;
+    transform: scale(0.8);
+    transition: transform 0.2s;
+}
+
+.next_categories:hover {
+    transform: scale(0.9)
 }
