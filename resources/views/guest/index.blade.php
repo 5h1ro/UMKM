@@ -100,10 +100,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="arrow_prev" style="transform: scale(3)">
+                        <button class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
+                            style="box-shadow: none">
+                            <i class="fas fa-chevron-circle-left"></i>
+                        </button>
+                    </div>
+                    <div class="arrow_next" style="transform: scale(3)">
+                        <button class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
+                            style="box-shadow: none">
+                            <i class="fas fa-chevron-circle-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-
-
         </div>
         <footer class="footer pt-3">
             <div class="container-fluid">

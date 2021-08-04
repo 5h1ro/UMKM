@@ -113,3 +113,15 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.arrow_prev {
+    position: absolute;
+    top: 48%;
+    left: 16%;
+}
+
+.arrow_next {
+    position: absolute;
+    top: 48%;
+    right: 16%;
+}
