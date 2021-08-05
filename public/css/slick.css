@@ -1,15 +1,13 @@
 /* Slider */
+
 .slick-slider {
     position: relative;
-
-    display: block;
     box-sizing: border-box;
-
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
+    display: block;
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -ms-touch-action: pan-y;
@@ -19,10 +17,8 @@
 
 .slick-list {
     position: relative;
-
     display: block;
     overflow: hidden;
-
     margin: 0;
     padding: 0;
 }
@@ -49,7 +45,6 @@
     position: relative;
     top: 0;
     left: 0;
-
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -58,7 +53,6 @@
 .slick-track:before,
 .slick-track:after {
     display: table;
-
     content: '';
 }
 
@@ -73,7 +67,6 @@
 .slick-slide {
     display: none;
     float: left;
-
     height: 100%;
     min-height: 1px;
 }
@@ -104,9 +97,7 @@
 
 .slick-vertical .slick-slide {
     display: block;
-
     height: auto;
-
     border: 1px solid transparent;
 }
 
@@ -114,15 +105,18 @@
     display: none;
 }
 
+
+/* ====== banner ====== */
+
 .arrow_prev {
     position: absolute;
-    top: 23%;
+    top: 30%;
     left: 16%;
 }
 
 .prev {
     position: absolute;
-    top: 23%;
+    top: 30%;
     left: 16%;
     transform: scale(3);
     transition: transform 0.2s;
@@ -134,13 +128,13 @@
 
 .arrow_next {
     position: absolute;
-    top: 23%;
+    top: 30%;
     right: 16%;
 }
 
 .next {
     position: absolute;
-    top: 23%;
+    top: 30%;
     right: 16%;
     transform: scale(3);
     transition: transform 0.2s;
@@ -151,18 +145,24 @@
 }
 
 
+/* ====== end banner ====== */
+
+
+/* ====== categories ====== */
+
 .arrow_prev_categories {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 15%;
 }
 
 .prev_categories {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 15%;
+    opacity: 0;
     transform: scale(0.8);
-    transition: transform 0.2s;
+    transition: transform 0.2s, opacity 0.2s, left 0.5s;
 }
 
 .prev_categories:hover {
@@ -171,18 +171,32 @@
 
 .arrow_next_categories {
     position: absolute;
-    top: 70%;
+    top: 75%;
     right: 15%;
 }
 
 .next_categories {
     position: absolute;
-    top: 70%;
+    top: 75%;
     right: 15%;
+    opacity: 0;
     transform: scale(0.8);
-    transition: transform 0.2s;
+    transition: transform 0.2s, opacity 0.2s, right 0.5s;
 }
 
 .next_categories:hover {
     transform: scale(0.9)
 }
+
+.categories:hover .next_categories {
+    opacity: 1;
+    right: 14.3%;
+}
+
+.categories:hover .prev_categories {
+    opacity: 1;
+    left: 14.3%;
+}
+
+
+/* ====== end categories ====== */
