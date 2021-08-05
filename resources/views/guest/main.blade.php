@@ -22,9 +22,8 @@
     <link id="pagestyle" href="{{ asset('css') }}/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
     {{-- slick --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css') }}/slick.css" />
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css') }}/slick-theme.css" /> --}}
-    {{-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> --}}
+    {{-- style --}}
+    <link rel="stylesheet" href="{{ asset('css') }}/style.css">
 
 </head>
 

@@ -110,13 +110,13 @@
 
 .arrow_prev {
     position: absolute;
-    top: 30%;
+    top: 13%;
     left: 16%;
 }
 
 .prev {
     position: absolute;
-    top: 30%;
+    top: 13%;
     left: 16%;
     transform: scale(3);
     transition: transform 0.2s;
@@ -128,13 +128,13 @@
 
 .arrow_next {
     position: absolute;
-    top: 30%;
+    top: 13%;
     right: 16%;
 }
 
 .next {
     position: absolute;
-    top: 30%;
+    top: 13%;
     right: 16%;
     transform: scale(3);
     transition: transform 0.2s;
@@ -152,13 +152,13 @@
 
 .arrow_prev_categories {
     position: absolute;
-    top: 75%;
+    top: 38%;
     left: 15%;
 }
 
 .prev_categories {
     position: absolute;
-    top: 75%;
+    top: 38%;
     left: 15%;
     opacity: 0;
     transform: scale(0.8);
@@ -171,13 +171,13 @@
 
 .arrow_next_categories {
     position: absolute;
-    top: 75%;
+    top: 38%;
     right: 15%;
 }
 
 .next_categories {
     position: absolute;
-    top: 75%;
+    top: 38%;
     right: 15%;
     opacity: 0;
     transform: scale(0.8);
@@ -189,14 +189,65 @@
 }
 
 .categories:hover .next_categories {
-    opacity: 1;
+    opacity: 0.8;
     right: 14.3%;
 }
 
 .categories:hover .prev_categories {
-    opacity: 1;
+    opacity: 0.8;
     left: 14.3%;
 }
 
 
 /* ====== end categories ====== */
+
+
+/* ====== furniture ====== */
+
+.arrow_prev_furniture {
+    position: absolute;
+    top: 48%;
+    left: 5%;
+}
+
+.prev_furniture {
+    position: absolute;
+    top: 48%;
+    left: 5%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.2s, opacity 0.2s, left 0.5s;
+}
+
+.prev_furniture:hover {
+    transform: scale(0.9)
+}
+
+.arrow_next_furniture {
+    position: absolute;
+    top: 48%;
+    right: 5%;
+}
+
+.next_furniture {
+    position: absolute;
+    top: 48%;
+    right: 5%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.2s, opacity 0.2s, right 0.5s;
+}
+
+.next_furniture:hover {
+    transform: scale(0.9)
+}
+
+.furniture:hover .next_furniture {
+    opacity: 0.8;
+    right: 3%;
+}
+
+.furniture:hover .prev_furniture {
+    opacity: 0.8;
+    left: 3%;
+}
