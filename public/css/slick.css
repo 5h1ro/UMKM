@@ -110,13 +110,13 @@
 
 .arrow_prev {
     position: absolute;
-    top: 13%;
+    top: 7%;
     left: 16%;
 }
 
 .prev {
     position: absolute;
-    top: 13%;
+    top: 7%;
     left: 16%;
     transform: scale(3);
     transition: transform 0.2s;
@@ -128,13 +128,13 @@
 
 .arrow_next {
     position: absolute;
-    top: 13%;
+    top: 7%;
     right: 16%;
 }
 
 .next {
     position: absolute;
-    top: 13%;
+    top: 7%;
     right: 16%;
     transform: scale(3);
     transition: transform 0.2s;
@@ -152,13 +152,13 @@
 
 .arrow_prev_categories {
     position: absolute;
-    top: 38%;
+    top: 18.5%;
     left: 15%;
 }
 
 .prev_categories {
     position: absolute;
-    top: 38%;
+    top: 18.5%;
     left: 15%;
     opacity: 0;
     transform: scale(0.8);
@@ -171,13 +171,13 @@
 
 .arrow_next_categories {
     position: absolute;
-    top: 38%;
+    top: 18.5%;
     right: 15%;
 }
 
 .next_categories {
     position: absolute;
-    top: 38%;
+    top: 18.5%;
     right: 15%;
     opacity: 0;
     transform: scale(0.8);
@@ -248,6 +248,57 @@
 }
 
 .furniture:hover .prev_furniture {
+    opacity: 0.8;
+    left: 3%;
+}
+
+
+/* ====== food_and_drink ====== */
+
+.arrow_prev_food_and_drink {
+    position: absolute;
+    top: 48%;
+    left: 5%;
+}
+
+.prev_food_and_drink {
+    position: absolute;
+    top: 48%;
+    left: 5%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.2s, opacity 0.2s, left 0.5s;
+}
+
+.prev_food_and_drink:hover {
+    transform: scale(0.9)
+}
+
+.arrow_next_food_and_drink {
+    position: absolute;
+    top: 48%;
+    right: 5%;
+}
+
+.next_food_and_drink {
+    position: absolute;
+    top: 48%;
+    right: 5%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.2s, opacity 0.2s, right 0.5s;
+}
+
+.next_food_and_drink:hover {
+    transform: scale(0.9)
+}
+
+.food_and_drink:hover .next_food_and_drink {
+    opacity: 0.8;
+    right: 3%;
+}
+
+.food_and_drink:hover .prev_food_and_drink {
     opacity: 0.8;
     left: 3%;
 }

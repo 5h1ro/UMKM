@@ -65,7 +65,7 @@
         <div class="container-fluid py-4" style="position: relative;">
             <div class="row justify-content-center">
                 <div class="col-md-9 align-self-center">
-                    <div class=" height-300 slider bg-cover border-radius-2xl overflow-hidden">
+                    <div class="height-300 slider bg-cover border-radius-2xl overflow-hidden">
                         <div class="height-300 overflow-hidden  position-relative bg-cover col"
                             style="background-image: url('{{ asset('img') }}/ivancik.jpg');">
                             <span class="mask bg-gradient-dark"></span>
@@ -212,7 +212,8 @@
                     </div>
                 </div>
                 {{-- end categories --}}
-                {{-- categories --}}
+
+                {{-- furniture --}}
                 <div class="row col-md-9 align-self-center mt-n8 row justify-content-center">
                     <div class="col-md-9 align-self-center" style="position: absolute; z-index: -1;">
                         <h3>Furniture Terlaris</h3>
@@ -284,6 +285,109 @@
                     </div>
                 </div>
                 {{-- end furniture --}}
+
+                {{-- recommended store --}}
+                <div class="row col-md-9 align-self-center mt-2 row justify-content-center">
+                    <h3>Toko Pilihan</h3>
+                    <div class="recommended_slider bg-cover border-radius-2xl overflow-hidden">
+                        @for ($i = 0; $i <= 9; $i++)
+                            <div class="row justify-content-center mx-4 " style="background-color: violet">
+                                <div class="btn col align-self-center mb-xl-0 bg-white border-radius-xl my-2">
+                                    <div class="card card-blog card-plain my-2">
+                                        <div class="position-relative">
+                                            <a class="d-block shadow-xl border-radius-xl overflow-hidden"
+                                                style="height: 150px">
+                                                <img src="{{ asset('img/product/furniture.jpg') }}" alt="img-blur-shadow"
+                                                    class="img-fluid shadow border-radius-xl">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-1 pb-0 food_and_drink_items">
+                                            <div class="text-overflow">
+                                                <p style="font-weight: bold; text-transform: none">
+                                                    CV Barokah Bakery
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+                {{-- end recommended store --}}
+
+                {{-- food and drink --}}
+                <div class="row col-md-9 align-self-center mt-n9 row justify-content-center">
+                    <div class="col-md-9 align-self-center" style="position: absolute; z-index: -1;">
+                        <h3>Makanan dan Minuman Terlaris</h3>
+                        <div class="height-300 bg-cover border-radius-2xl overflow-hidden">
+                            <div class="height-300 overflow-hidden  position-relative bg-cover col"
+                                style="background-image: url('{{ asset('img') }}/ivancik.jpg');">
+                                <span class="mask bg-gradient-dark"></span>
+                                <div class="card-body position-relative d-flex flex-column p-3 height-300">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 align-self-center mt-12 row justify-content-center" style="transform: scale(0.9)">
+                        <div class="col-md-7 align-self-center text-center mt-6">
+                            <h2>Makanan dan Minuman Khas Madiun</h2>
+                        </div>
+                        <div class="food_and_drink mt-5">
+                            <div class="food_and_drink_slider bg-cover row">
+                                @for ($i = 0; $i <= 9; $i++)
+                                    <div class="btn col-xl-3 col-md-6 mb-xl-0 bg-white border-radius-xl"
+                                        style="transform: scale(0.9);">
+                                        <div class="card card-blog card-plain my-2">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl overflow-hidden"
+                                                    style="height: 150px">
+                                                    <img src="{{ asset('img/product/furniture.jpg') }}"
+                                                        alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
+                                            </div>
+                                            <div class="card-body px-1 pb-0 food_and_drink_items">
+                                                <div class="text-overflow">
+                                                    <p class="title">
+                                                        Ukir kayu jati motif bulgaria 60 cm
+                                                    </p>
+                                                </div>
+                                                <p class="price mt-n3">
+                                                    Rp. 50.000
+                                                </p>
+                                                <div class="d-flex name_store justify-content-start mt-n2">
+                                                    <img style="width: 10%; height: 10%;" class="d-flex align-items-center"
+                                                        src="{{ asset('img/store.svg') }}">
+                                                    <p class="ms-2 d-flex align-items-center">
+                                                        CV. Wilis
+                                                    </p>
+                                                </div>
+                                                <p class="sold d-flex align-items-end">
+                                                    Terjual 2,740
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endfor
+                            </div>
+                            <div class="arrow_prev_food_and_drink prev_food_and_drink">
+                                <button
+                                    class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
+                                    style="box-shadow: 0px 0px 40px 5px grey;">
+                                    <img src="{{ asset('img/kiri.png') }}">
+                                </button>
+                            </div>
+                            <div class="arrow_next_food_and_drink next_food_and_drink">
+                                <button
+                                    class="btn btn-icon-only mb-0 btn-sm d-flex align-items-center justify-content-center"
+                                    style="box-shadow: 0px 0px 40px 5px grey;">
+                                    <img src="{{ asset('img/kanan.png') }}">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- end food and drink --}}
             </div>
         </div>
         <footer class=" footer pt-3">
