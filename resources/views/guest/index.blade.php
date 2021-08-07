@@ -59,7 +59,8 @@
             </div>
         </div>
     </div>
-    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
+    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg" id="main-scrollbar"
+        data-scrollbar>
         <div style="height: 8vh;"></div>
         {{-- slick --}}
         <div class="container-fluid py-4" style="position: relative;">
@@ -290,22 +291,44 @@
                 <div class="row col-md-9 align-self-center mt-2 row justify-content-center">
                     <h3>Toko Pilihan</h3>
                     <div class="recommended_slider bg-cover border-radius-2xl overflow-hidden">
-                        @for ($i = 0; $i <= 9; $i++)
-                            <div class="row justify-content-center mx-4 " style="background-color: violet">
-                                <div class="btn col align-self-center mb-xl-0 bg-white border-radius-xl my-2">
-                                    <div class="card card-blog card-plain my-2">
-                                        <div class="position-relative">
-                                            <a class="d-block shadow-xl border-radius-xl overflow-hidden"
-                                                style="height: 150px">
-                                                <img src="{{ asset('img/product/furniture.jpg') }}" alt="img-blur-shadow"
-                                                    class="img-fluid shadow border-radius-xl">
-                                            </a>
+                        @for ($i = 0; $i <= 4; $i++)
+                            <div class="height-600">
+                                <div class="row justify-content-center mx-4 ">
+                                    <div class="btn col align-self-center mb-xl-0 bg-white border-radius-xl my-2">
+                                        <div class="card card-blog card-plain my-2">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl overflow-hidden"
+                                                    style="height: 150px">
+                                                    <img src="{{ asset('img/product/furniture.jpg') }}"
+                                                        alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
+                                            </div>
+                                            <div class="card-body px-1 pb-0 food_and_drink_items">
+                                                <div class="text-overflow">
+                                                    <p style="font-weight: bold; text-transform: none">
+                                                        CV Barokah Bakery
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-body px-1 pb-0 food_and_drink_items">
-                                            <div class="text-overflow">
-                                                <p style="font-weight: bold; text-transform: none">
-                                                    CV Barokah Bakery
-                                                </p>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mx-4 mt-4">
+                                    <div class="btn col align-self-center mb-xl-0 bg-white border-radius-xl my-2">
+                                        <div class="card card-blog card-plain my-2">
+                                            <div class="position-relative">
+                                                <a class="d-block shadow-xl border-radius-xl overflow-hidden"
+                                                    style="height: 150px">
+                                                    <img src="{{ asset('img/product/furniture.jpg') }}"
+                                                        alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                                </a>
+                                            </div>
+                                            <div class="card-body px-1 pb-0 food_and_drink_items">
+                                                <div class="text-overflow">
+                                                    <p style="font-weight: bold; text-transform: none">
+                                                        CV Barokah Bakery
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -390,39 +413,19 @@
                 {{-- end food and drink --}}
             </div>
         </div>
-        <footer class=" footer pt-3">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6 mb-lg-0 mb-4">
-                        <div class="copyright text-center text-sm text-muted text-lg-start">
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>,
-                            made with <i class="fa fa-heart"></i> by
-                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
-                                Tim</a>
-                            for a better web.
-                        </div>
+        <footer class="footer pt-3 height-300 bg-gradient-white border-top">
+            <div class="container-fluid row justify-content-center">
+                <div class="row align-items-center justify-content-between col-md-9">
+                    <div class="col-lg-6 mt-4">
+                        <img src="{{ asset('img/logoumkm.png') }}" style="width: 50%; height: 50%;">
+                        <br>
+                        <a class="btn mx-2 mt-4" href="#">About</a>
+                        <a class="btn mx-2 mt-4" href="#">Contact us</a>
+                        <a class="btn mx-2 mt-4" href="#">Instagram</a>
+                        <a class="btn mx-2 mt-4" href="#">Facebook</a>
+                        <a class="btn mx-2 mt-4" href="#">Telegram</a>
                     </div>
-                    <div class="col-lg-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative
-                                    Tim</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                    target="_blank">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                    target="_blank">License</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <img class="col-3 align-self-end" src="{{ asset('img/animasi.png') }}">
                 </div>
             </div>
         </footer>

@@ -24,10 +24,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css') }}/slick.css" />
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('css') }}/style.css">
+    <style>
+        html {
+            animation: 5000ms
+        }
 
+    </style>
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show bg-gray-100 overflow-hidden">
 
     @yield('content')
     <div class="fixed-plugin">
@@ -115,8 +120,38 @@
     <!--   Core JS Files   -->
     <script src="{{ asset('js') }}/core/popper.min.js"></script>
     <script src="{{ asset('js') }}/core/bootstrap.min.js"></script>
-    <script src="{{ asset('js') }}/plugins/perfect-scrollbar.min.js"></script>
-    <script src="{{ asset('js') }}/plugins/smooth-scrollbar.min.js"></script>
+    {{-- <script src="{{ asset('js') }}/plugins/perfect-scrollbar.min.js"></script> --}}
+    {{-- <script src="{{ asset('js') }}/plugins/smooth-scrollbar.min.js"></script> --}}
+    <script src="{{ asset('js/smooth-scrollbar.js') }}"></script>
+
+    {{-- <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.1'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script> --}}
+
+    <script>
+        var Scrollbar = window.Scrollbar;
+        var options = {
+            damping: 0.07,
+            thumbMinSize: 5,
+            renderByPixel: true,
+            continuousScrolling: true,
+            plugins: {
+                overscroll: {
+                    effect: 'bounce',
+                    damping: 0.15,
+                    maxOverscroll: 80
+                }
+            },
+        };
+        Scrollbar.init(document.querySelector('#main-scrollbar'), options);
+    </script>
+
     <script src="{{ asset('js') }}/plugins/chartjs.min.js"></script>
     <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
@@ -287,15 +322,6 @@
                 },
             },
         });
-    </script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
