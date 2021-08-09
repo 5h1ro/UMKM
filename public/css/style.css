@@ -31,3 +31,10 @@
     text-align: left;
     text-transform: none;
 }
+
+
+/* ====== border top ====== */
+
+.border-top {
+    border-top: 3px solid #dee2e6 !important;
+}

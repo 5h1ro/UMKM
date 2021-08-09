@@ -24,12 +24,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css') }}/slick.css" />
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('css') }}/style.css">
-    <style>
-        html {
-            animation: 5000ms
-        }
-
-    </style>
 </head>
 
 <body class="g-sidenav-show bg-gray-100 overflow-hidden">
@@ -327,7 +321,15 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('js') }}/soft-ui-dashboard.min.js?v=1.0.3"></script>
-
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
     {{-- slick --}}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> --}}

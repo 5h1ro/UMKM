@@ -26,6 +26,8 @@ Route::get('/logout', function () {
     return Redirect::to('/');
 });
 
+Route::get('/buy', [App\Http\Controllers\BuyController::class, 'index'])->name('buy');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

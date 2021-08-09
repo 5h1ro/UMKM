@@ -239,30 +239,33 @@
                                         <div class="card card-blog card-plain my-2">
                                             <div class="position-relative">
                                                 <a class="d-block shadow-xl border-radius-xl overflow-hidden"
-                                                    style="height: 150px">
+                                                    style="height: 150px" href="{{ url('buy') }}">
                                                     <img src="{{ asset('img/product/furniture.jpg') }}"
                                                         alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                                 </a>
                                             </div>
                                             <div class="card-body px-1 pb-0 furniture_items">
-                                                <div class="text-overflow">
-                                                    <p class="title">
-                                                        Ukir kayu jati motif bulgaria 60 cm
+                                                <a href="{{ url('buy') }}">
+                                                    <div class="text-overflow">
+                                                        <p class="title">
+                                                            Ukir kayu jati motif bulgaria 60 cm
+                                                        </p>
+                                                    </div>
+                                                    <p class="price mt-n3">
+                                                        Rp. 50.000
                                                     </p>
-                                                </div>
-                                                <p class="price mt-n3">
-                                                    Rp. 50.000
-                                                </p>
-                                                <div class="d-flex name_store justify-content-start mt-n2">
-                                                    <img style="width: 10%; height: 10%;" class="d-flex align-items-center"
-                                                        src="{{ asset('img/store.svg') }}">
-                                                    <p class="ms-2 d-flex align-items-center">
-                                                        CV. Wilis Furniture
+                                                    <div class="d-flex name_store justify-content-start mt-n2">
+                                                        <img style="width: 10%; height: 10%;"
+                                                            class="d-flex align-items-center"
+                                                            src="{{ asset('img/store.svg') }}">
+                                                        <p class="ms-2 d-flex align-items-center">
+                                                            CV. Wilis Furniture
+                                                        </p>
+                                                    </div>
+                                                    <p class="sold d-flex align-items-end">
+                                                        Terjual 2,740
                                                     </p>
-                                                </div>
-                                                <p class="sold d-flex align-items-end">
-                                                    Terjual 2,740
-                                                </p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
