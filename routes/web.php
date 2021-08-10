@@ -28,6 +28,8 @@ Route::get('/logout', function () {
 
 Route::get('/buy', [App\Http\Controllers\BuyController::class, 'index'])->name('buy');
 
+Route::get('/checkout', [App\Http\Controllers\BuyController::class, 'checkout'])->name('checkout');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
