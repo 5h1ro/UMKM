@@ -3,9 +3,9 @@
     <div class="container-fluid">
         <div class="container-fluid row justify-content-between">
             <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 col-2" href=" {{ url('/') }}" id="brand">
-                UMKM
+                <img src="{{ asset('img/logoumkm.png') }}" class="col-4">
             </a>
-            <div class="col-6 align-self-center">
+            <div class=" col-6 align-self-center">
                 <div class="d-flex justify-content-center">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Type here...">
@@ -27,7 +27,7 @@
             </button>
             <div class="ms-6 col-1 row align-items-center border-end border-2">
                 <div class="col-6">
-                    <a href="#">
+                    <a href="{{ url('/cart') }}">
                         <i class="fas fa-shopping-cart opacity-6 text-dark me-1 mx-2"></i>
                     </a>
                 </div>

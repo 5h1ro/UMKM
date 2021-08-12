@@ -33,12 +33,12 @@
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     </div>
                                     <div class="row align-items-center mt-1">
-                                        <div class="col-1">
-                                            <img class="col-12 border-radius-xl overflow-hidden"
+                                        <div class="col-2 text-center">
+                                            <img class="col-8 border-radius-lg overflow-hidden"
                                                 src="{{ asset('img/bruce-mars.jpg') }}">
                                         </div>
                                         <div class="col-9">
-                                            <span style="font-size: 15pt">
+                                            <span style="font-size: 12pt">
                                                 Masker SENSI MASK DUCKBILL 3-Ply Face Mask BOX Isi 50 Pcs ORIGINAL
                                             </span>
                                             <div class="mt-1 align-items-center">

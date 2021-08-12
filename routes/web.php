@@ -32,6 +32,10 @@ Route::get('/checkout', [App\Http\Controllers\BuyController::class, 'checkout'])
 Route::get('/cart', [App\Http\Controllers\BuyController::class, 'cart'])->name('cart');
 // ========= end buy
 
+// ====== by categories
+Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories');
+// ====== end by categories
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
