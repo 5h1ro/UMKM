@@ -15,6 +15,7 @@
     <link href="{{ asset('css') }}/nucleo-icons.css" rel="stylesheet" />
     <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <script defer src="{{ asset('css') }}/fontawesome/all.css"></script>
     <script defer src="{{ asset('js') }}/fontawesome/all.js"></script>
     <link href="{{ asset('css') }}/nucleo-svg.css" rel="stylesheet" />

@@ -26,9 +26,11 @@ Route::get('/logout', function () {
     return Redirect::to('/');
 });
 
+// ========== buy
 Route::get('/buy', [App\Http\Controllers\BuyController::class, 'index'])->name('buy');
-
 Route::get('/checkout', [App\Http\Controllers\BuyController::class, 'checkout'])->name('checkout');
+Route::get('/cart', [App\Http\Controllers\BuyController::class, 'cart'])->name('cart');
+// ========= end buy
 
 Auth::routes();
 

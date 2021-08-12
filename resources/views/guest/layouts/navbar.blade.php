@@ -27,7 +27,9 @@
             </button>
             <div class="ms-6 col-1 row align-items-center border-end border-2">
                 <div class="col-6">
-                    <i class="fas fa-shopping-cart opacity-6 text-dark me-1 mx-2"></i>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart opacity-6 text-dark me-1 mx-2"></i>
+                    </a>
                 </div>
                 <div class="col-6">
                     <i class="fas fa-envelope opacity-6 text-dark me-1 mx-2"></i>

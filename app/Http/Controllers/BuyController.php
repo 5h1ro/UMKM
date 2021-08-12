@@ -16,4 +16,9 @@ class BuyController extends Controller
     {
         return view('guest.buy.checkout');
     }
+
+    public function cart()
+    {
+        return view('guest.buy.cart');
+    }
 }
