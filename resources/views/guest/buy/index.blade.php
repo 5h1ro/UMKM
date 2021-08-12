@@ -24,10 +24,9 @@
                         </div>
                         <div class="col-6 text-center mt-2">
                             <div class="card-body bg-white p-3 text-start col-md-auto border-radius-md shadow-blur">
-                                <b style="font-size: 20px">Masker SENSI MASK DUCKBILL 3-Ply Face Mask BOX Isi 50 Pcs
-                                    ORIGINAL</b>
+                                <b style="font-size: 20px">{{ $item->name }}</b>
                                 <div class="row align-items-center mt-1">
-                                    <p class="col-sm-auto ">Terjual 13,3rb</p>
+                                    <p class="col-sm-auto ">Terjual {{ $item->sold }}</p>
                                     <p class="col-sm-auto ">•</p>
                                     <p class="col-sm-auto ">
                                         3.480 ulasan
@@ -39,7 +38,7 @@
                                 </div>
                                 <div class="mt-1 align-items-center">
                                     <p class="col text-start" style="font-size: 30px">
-                                        <b>Rp10.399.000</b>
+                                        <b>Rp {{ number_format($item->price, 0, ',', '.') }}</b>
                                     </p>
                                 </div>
                             </div>
@@ -57,31 +56,16 @@
                                     <div class="tab-pane fade show active" id="nav-detail" role="tabpanel"
                                         aria-labelledby="nav-detail-tab">
                                         <dl class="row mt-2">
-                                            <dt class="col-sm-3">Description lists</dt>
-                                            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+                                            <dt class="col-sm-3">Kondisi</dt>
+                                            <dd class="col-sm-9">{{ $item->condition }}</dd>
 
-                                            <dt class="col-sm-3">Euismod</dt>
-                                            <dd class="col-sm-9">
-                                                <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec
-                                                    elit.</p>
-                                                <p>Donec id elit non mi porta gravida at eget metus.</p>
-                                            </dd>
+                                            <dt class="col-sm-3">Berat</dt>
+                                            <dd class="col-sm-9">{{ $item->weight }} Kg</dd>
 
-                                            <dt class="col-sm-3">Malesuada porta</dt>
-                                            <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+                                            <dt class="col-sm-3">Kategori</dt>
+                                            <dd class="col-sm-9">{{ $item->category->name }}</dd>
 
-                                            <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-                                            <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                                condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-
-                                            <dt class="col-sm-3">Nesting</dt>
-                                            <dd class="col-sm-9">
-                                                <dl class="row">
-                                                    <dt class="col-sm-4">Nested definition list</dt>
-                                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc
-                                                        augue blandit nunc.</dd>
-                                                </dl>
-                                            </dd>
+                                            <dd class="col-sm-12">{{ $item->detail }}</dd>
                                         </dl>
                                     </div>
                                     <div class="tab-pane fade min-height-250" id="nav-info" role="tabpanel"
@@ -135,25 +119,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body bg-white p-3 text-start col-md-auto border-radius-md mt-2 shadow-blur">
-                                <div class="row align-items-center mt-1">
-                                    <div class="col">
-                                        <img class="col-12 border-radius-xl overflow-hidden"
-                                            src="{{ asset('img/bruce-mars.jpg') }}">
-                                    </div>
-                                    <div class="col-8">
-                                        <b style="font-size: 16px">Frui Official Store</b> <br>
-                                        <b style="font-size: 16px" class="text-success">Online</b>
-                                    </div>
-                                    <div class="col d-grid">
-                                        <div class="mt-1 d-grid align-items-center">
-                                            <button class="btn btn-white shadow-none border border-dark border-2">
-                                                <span class="text-dark">Follow</span>
-                                            </button>
+                            <a href="{{ route('store', $item->idSeller) }}">
+                                <div
+                                    class="card-body bg-white p-3 text-start col-md-auto border-radius-md mt-2 shadow-blur">
+                                    <div class="row align-items-center mt-1">
+                                        <div class="col">
+                                            <img class="col-12 border-radius-xl overflow-hidden"
+                                                src="{{ asset('img/bruce-mars.jpg') }}">
+                                        </div>
+                                        <div class="col-8">
+                                            <b style="font-size: 16px">{{ $item->seller->name }}</b> <br>
+                                            <b style="font-size: 16px" class="text-success">Online</b>
+                                        </div>
+                                        <div class="col d-grid">
+                                            <div class="mt-1 d-grid align-items-center">
+                                                <button class="btn btn-white shadow-none border border-dark border-2">
+                                                    <span class="text-dark">Follow</span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col text-center mt-2">
                             <div class="card-body bg-white p-3 text-start col-md-10 border-radius-md shadow-blur">
@@ -164,7 +151,7 @@
                                 <div class="row justify-content-between align-items-center mt-1">
                                     <p class="col-sm-5 text-start">Subtotal</p>
                                     <p class="col text-end" style="font-size: 20px">
-                                        <b>Rp10.399.000</b>
+                                        <b>Rp {{ number_format($item->price, 0, ',', '.') }}</b>
                                     </p>
                                 </div>
                                 <div class="mt-1 d-grid align-items-center">

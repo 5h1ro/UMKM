@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\BuyController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Seller\SellerController;
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.index');
-});
+Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/logout', function () {
     Auth::logout();
@@ -27,19 +30,24 @@ Route::get('/logout', function () {
 });
 
 // ========== buy
-Route::get('/buy', [App\Http\Controllers\BuyController::class, 'index'])->name('buy');
-Route::get('/checkout', [App\Http\Controllers\BuyController::class, 'checkout'])->name('checkout');
-Route::get('/cart', [App\Http\Controllers\BuyController::class, 'cart'])->name('cart');
+Route::get('/buy/{id}', [BuyController::class, 'index'])->name('buy');
+Route::get('/checkout', [BuyController::class, 'checkout'])->name('checkout');
+Route::get('/cart', [BuyController::class, 'cart'])->name('cart');
 // ========= end buy
 
 // ====== by categories
-Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories');
+Route::get('/categories', [CategoriesController::class, 'index'])->name('categories');
 // ====== end by categories
+
+// ====== store
+Route::get('/store/{id}', [StoreController::class, 'index'])->name('store');
+// ====== end stire
+
 
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index']);

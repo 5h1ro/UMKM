@@ -183,13 +183,13 @@
                         </div>
                         <div class="furniture mt-5">
                             <div class="furniture_slider bg-cover row">
-                                @for ($i = 0; $i <= 9; $i++)
+                                @foreach ($furniture as $furniture)
                                     <div class="btn col-xl-3 col-md-6 mb-xl-0 bg-white border-radius-xl"
                                         style="transform: scale(0.9);">
                                         <div class="card card-blog card-plain my-2">
                                             <div class="position-relative">
                                                 <a class="d-block shadow-xl border-radius-xl overflow-hidden"
-                                                    style="height: 150px" href="{{ url('buy') }}">
+                                                    style="height: 150px" href="{{ route('buy', $furniture->id) }}">
                                                     <img src="{{ asset('img/product/furniture.jpg') }}"
                                                         alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                                 </a>
@@ -198,28 +198,28 @@
                                                 <a href="{{ url('buy') }}">
                                                     <div class="text-overflow">
                                                         <p class="title">
-                                                            Ukir kayu jati motif bulgaria 60 cm
+                                                            {{ $furniture->name }}
                                                         </p>
                                                     </div>
                                                     <p class="price mt-n3">
-                                                        Rp. 50.000
+                                                        Rp. {{ number_format($furniture->price, 0, ',', '.') }}
                                                     </p>
                                                     <div class="d-flex name_store justify-content-start mt-n2">
                                                         <img style="width: 10%; height: 10%;"
                                                             class="d-flex align-items-center"
                                                             src="{{ asset('img/store.svg') }}">
                                                         <p class="ms-2 d-flex align-items-center">
-                                                            CV. Wilis Furniture
+                                                            {{ $furniture->seller->name }}
                                                         </p>
                                                     </div>
                                                     <p class="sold d-flex align-items-end">
-                                                        Terjual 2,740
+                                                        Terjual {{ $furniture->sold }}
                                                     </p>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                @endfor
+                                @endforeach
                             </div>
                             <div class="arrow_prev_furniture prev_furniture">
                                 <button

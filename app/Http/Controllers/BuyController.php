@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class BuyController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('guest.buy.index');
+        $item = Item::where('id', $id)->first();
+        return view('guest.buy.index', compact('item'));
     }
 
     public function checkout()

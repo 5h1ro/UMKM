@@ -29,5 +29,13 @@ class UserSeeder extends Seeder
             'role'             => 'seller',
         ]);
         $user->save();
+
+        $user = user::create([
+            'name'             => 'CV Wilis Furniture',
+            'email'            => 'wilis@wilis.com',
+            'password'         => bcrypt('password'),
+            'role'             => 'seller',
+        ]);
+        $user->save();
     }
 }
