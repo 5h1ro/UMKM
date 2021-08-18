@@ -195,7 +195,7 @@
                                                 </a>
                                             </div>
                                             <div class="card-body px-1 pb-0 furniture_items">
-                                                <a href="{{ url('buy') }}">
+                                                <a href="{{ route('buy', $furniture->id) }}">
                                                     <div class="text-overflow">
                                                         <p class="title">
                                                             {{ $furniture->name }}

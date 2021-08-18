@@ -37,5 +37,13 @@ class UserSeeder extends Seeder
             'role'             => 'seller',
         ]);
         $user->save();
+
+        $user = user::create([
+            'name'             => 'Nurhakiki',
+            'email'            => 'dany@dany.com',
+            'password'         => bcrypt('password'),
+            'role'             => 'buyer',
+        ]);
+        $user->save();
     }
 }

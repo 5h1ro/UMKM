@@ -19,6 +19,46 @@
                         <div class="mt-2">
                             <h3>Beli Langsung</h3>
                         </div>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+                        <script>
+                            //ajax check ongkir
+                            let token = $("meta[name='csrf-token']").attr("content");
+                            let city_origin = {!! json_encode($city_origin[0]) !!};
+                            let city_destination = {!! json_encode($city_destination[0]) !!};
+                            let courier = 'pos';
+                            let weight = 500;
+
+                            isProcessing = true;
+                            jQuery.ajax({
+                                url: "/ongkir",
+                                data: {
+                                    _token: token,
+                                    city_origin: city_origin,
+                                    city_destination: city_destination,
+                                    courier: courier,
+                                    weight: weight,
+                                },
+                                dataType: "JSON",
+                                type: "POST",
+                                success: function(response) {
+                                    isProcessing = false;
+                                    if (response) {
+                                        $('#ongkir').empty();
+                                        $.each(response[0]['costs'], function(key, value) {
+                                            $('#ongkir').append('<li><a class="dropdown-item" href="#"><div>' +
+                                                response[0].code.toUpperCase() + ' : <strong>' +
+                                                value.service + '</strong> - Rp. ' + value.cost[
+                                                    0].value + ' (' + value.cost[0].etd +
+                                                ' hari)</div></a></li>')
+                                        });
+
+                                    }
+                                }
+                            });
+                        </script>
                         <div class="col-9 text-start mt-2">
                             <div class="card-body bg-white p-3 text-start border-radius-md shadow-blur d-inline-flex">
                                 <b style="font-size: 20px">Barang yang dibeli</b>
@@ -30,10 +70,10 @@
                                             src="{{ asset('img/bruce-mars.jpg') }}">
                                     </div>
                                     <div class="col-10">
-                                        <b style="font-size: 25px">Masker SENSI MASK DUCKBILL 3-Ply Face Mask BOX Isi 50 Pcs
-                                            ORIGINAL</b>
+                                        <b style="font-size: 25px">{{ $item->name }}</b>
                                         <div class="mt-1 align-items-center">
-                                            <b style="font-size: 18px">Rp10.399.000</b>
+                                            <b style="font-size: 18px">Rp.
+                                                {{ number_format($item->price, 0, ',', '.') }}</b>
                                         </div>
                                         <input type="text" placeholder="1" class="border-0 col-sm-2 mt-1"
                                             style="font-size: 18px">
@@ -62,42 +102,6 @@
 
                                 <div class="row align-items-center mt-3">
                                     <div class="col">
-                                        <b>Pilih Pengiriman</b>
-                                        <div class="dropdown">
-                                            <button
-                                                class="btn col-12 bg-white shadow-none border border-2 dropdown-toggle align-content-between"
-                                                type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <span>
-                                                    Reguler
-                                                </span>
-                                            </button>
-                                            <ul class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton">
-                                                <li><a class="dropdown-item" href="#">
-                                                        <div>
-                                                            <span>Reguler (2-4 hari)</span><br>
-                                                            <span style="font-size: 11px">Rp 19.000 - Rp 33.000</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="#">
-                                                        <div>
-                                                            <span>Reguler (5-9 hari)</span><br>
-                                                            <span style="font-size: 11px">Rp 31.000 - Rp 35.000</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="#">
-                                                        <div>
-                                                            <span>Kargo (5-7 hari)</span><br>
-                                                            <span style="font-size: 11px">Rp 80.000</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col">
                                         <b>Pilih Kurir</b>
                                         <div class="dropdown">
                                             <button
@@ -123,6 +127,22 @@
                                                         </div>
                                                     </a>
                                                 </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <b>Pilih Pengiriman</b>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn col-12 bg-white shadow-none border border-2 dropdown-toggle align-content-between"
+                                                type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span>
+                                                    Reguler
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton"
+                                                id="ongkir">
                                             </ul>
                                         </div>
                                     </div>

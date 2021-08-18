@@ -18,7 +18,8 @@ class SellerSeeder extends Seeder
             'name'             => 'CV Wilis Furniture',
             'description'      => 'Menjual produk resmi Logitech Indonesia.',
             'address'          => 'Jl. Jatijajar no 18, Kota Madiun',
-            'city'             => 'Kota Madiun',
+            'idProvince'       => '11',
+            'idCity'           => '139',
             'idUser'           => '3',
         ]);
         $user->save();

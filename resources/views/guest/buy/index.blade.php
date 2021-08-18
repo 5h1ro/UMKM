@@ -158,7 +158,7 @@
                                     <button class="btn btn-dark ">Keranjang</button>
                                 </div>
                                 <div class="mt-1 d-grid align-items-center">
-                                    <a href="{{ route('checkout') }}"
+                                    <a href="{{ route('checkout', $item->id) }}"
                                         class="btn btn-white shadow-none border border-dark border-2">
                                         <span class="text-dark">Beli Langsung</span>
                                     </a>

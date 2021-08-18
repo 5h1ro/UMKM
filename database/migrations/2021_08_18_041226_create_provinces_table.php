@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSellersTable extends Migration
+class CreateProvincesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateSellersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sellers', function (Blueprint $table) {
+        Schema::create('provinces', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('province_id');
             $table->string('name');
-            $table->string('description');
-            $table->string('address');
-            $table->string('city');
-            $table->unsignedInteger('idUser')->nullable();
-            $table->foreign('idUser', 'user_id_fk_001')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateSellersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sellers');
+        Schema::dropIfExists('provinces');
     }
 }

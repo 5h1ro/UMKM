@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Seller extends Model
+class Buyer extends Model
 {
     use HasFactory;
 
-    public $table = 'sellers';
+    public $table = 'buyers';
 
     protected $dates = [
         'created_at',
@@ -19,10 +19,9 @@ class Seller extends Model
 
     protected $fillable = [
         'name',
-        'description',
-        'address',
         'idProvince',
         'idCity',
+        'address',
         'idUser'
     ];
 

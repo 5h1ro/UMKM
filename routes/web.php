@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CheckOngkirController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Seller\SellerController;
@@ -31,9 +32,17 @@ Route::get('/logout', function () {
 
 // ========== buy
 Route::get('/buy/{id}', [BuyController::class, 'index'])->name('buy');
-Route::get('/checkout', [BuyController::class, 'checkout'])->name('checkout');
+Route::get('/checkout/{id}', [BuyController::class, 'checkout'])->name('checkout');
 Route::get('/cart', [BuyController::class, 'cart'])->name('cart');
 // ========= end buy
+
+Route::get('/ongkir', [CheckOngkirController::class, 'index']);
+Route::post('/ongkir', [CheckOngkirController::class, 'check_ongkir']);
+Route::get('/cities/{province_id}', [CheckOngkirController::class, 'getcities']);
+
+// ====== check ongkir
+Route::get('/check', [CheckOngkirController::class, 'check_ongkir'])->name('check');
+// ====== end check ongkir
 
 // ====== by categories
 Route::get('/categories', [CategoriesController::class, 'index'])->name('categories');
