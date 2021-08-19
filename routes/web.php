@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Seller\SellerController;
 use App\Http\Controllers\StoreController;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -28,11 +29,10 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/logout', function () {
     Auth::logout();
     return Redirect::to('/');
-});
+})->name('logout');
 
 // ========== buy
 Route::get('/buy/{id}', [BuyController::class, 'index'])->name('buy');
-Route::get('/checkout/{id}', [BuyController::class, 'checkout'])->name('checkout');
 Route::get('/cart', [BuyController::class, 'cart'])->name('cart');
 // ========= end buy
 
@@ -58,6 +58,14 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    Route::middleware(['buyer'])->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'index']);
+        // checkout
+        Route::get('/checkout/{id}', [BuyController::class, 'checkout'])->name('checkout');
+        Route::get('/pay/{total}', [BuyController::class, 'pay'])->name('pay');
+
+        // end checkout
+    });
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index']);
     });

@@ -30,6 +30,8 @@ class HomeController extends Controller
             return redirect()->to('admin');
         } elseif ($role == "seller") {
             return redirect()->to('seller');
+        } elseif ($role == "buyer") {
+            return redirect()->to('dashboard');
         } else {
             return redirect()->to('logout');
         }

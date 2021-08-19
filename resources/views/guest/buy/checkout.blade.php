@@ -172,6 +172,8 @@
                                                         $('.total_fix').empty();
                                                         $(".total_fix").append("<b>Rp <span id='price'>" + total_fix +
                                                             "</span></b>");
+                                                        var pay1 = document.getElementById('pay');
+                                                        pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
                                                     });
                                                 }
                                             }
@@ -192,6 +194,8 @@
                                         var total_fix = price_total + ongkir_total;
                                         $('.total_fix').empty();
                                         $(".total_fix").append("<b>Rp <span id='price'>" + total_fix + "</span></b>");
+                                        var pay1 = document.getElementById('pay');
+                                        pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
 
                                     });
 
@@ -210,6 +214,8 @@
                                             var total_fix = price_total + ongkir_total;
                                             $('.total_fix').empty();
                                             $(".total_fix").append("<b>Rp <span id='price'>" + total_fix + "</span></b>");
+                                            var pay1 = document.getElementById('pay');
+                                            pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
                                         }
                                     });
 
@@ -227,6 +233,8 @@
                                             var total_fix = price_total + ongkir_total;
                                             $('.total_fix').empty();
                                             $(".total_fix").append("<b>Rp <span id='price'>" + total_fix + "</span></b>");
+                                            var pay1 = document.getElementById('pay');
+                                            pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
                                         }
                                     });
                                 </script>
@@ -258,7 +266,7 @@
                                     </p>
                                 </div>
                                 <div class="mt-3 d-grid align-items-center">
-                                    <button class="btn btn-dark ">Bayar</button>
+                                    <a class="btn btn-dark" id="pay">Bayar</a>
                                 </div>
                             </div>
                         </div>

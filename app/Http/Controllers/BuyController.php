@@ -31,4 +31,9 @@ class BuyController extends Controller
     {
         return view('guest.buy.cart');
     }
+
+    public function pay($total)
+    {
+        dd($total);
+    }
 }
