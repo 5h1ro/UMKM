@@ -19,14 +19,20 @@ class Buyer extends Model
 
     protected $fillable = [
         'name',
+        'number',
         'idProvince',
         'idCity',
         'address',
         'idUser'
     ];
 
-    public function item()
+    public function city()
     {
-        return $this->hasMany(Item::class, 'idSeller');
+        return $this->belongsTo(City::class, 'idCity');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'idProvince');
     }
 }

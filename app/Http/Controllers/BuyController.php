@@ -18,10 +18,13 @@ class BuyController extends Controller
 
     public function checkout($id)
     {
+        $buyer = Buyer::first();
         $item = Item::where('id', $id)->first();
         $city_origin = Seller::first()->pluck('idCity');
         $city_destination = Buyer::first()->pluck('idCity');
-        return view('guest.buy.checkout', compact(['item','city_origin','city_destination']));
+        $weight = $item->weight;
+        $price = $item->price;
+        return view('guest.buy.checkout', compact(['item','city_origin','city_destination','buyer','weight','price']));
     }
 
     public function cart()

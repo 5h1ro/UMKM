@@ -167,39 +167,49 @@
                 }
             });
             //ajax check ongkir
-            let token = $("meta[name='csrf-token']").attr("content");
-            let city_origin = {!! json_encode($city_origin[0]) !!};
-            let city_destination = {!! json_encode($city_destination[0]) !!};
-            let courier = 'jne';
-            let weight = 500;
+            let isProcessing = false;
+            $('.btn-check').click(function(e) {
+                e.preventDefault();
 
-            isProcessing = true;
-            jQuery.ajax({
-                url: "/ongkir",
-                data: {
-                    _token: token,
-                    city_origin: city_origin,
-                    city_destination: city_destination,
-                    courier: courier,
-                    weight: weight,
-                },
-                dataType: "JSON",
-                type: "POST",
-                success: function(response) {
-                    isProcessing = false;
-                    if (response) {
-                        $('#ongkir').empty();
-                        $('.ongkir').addClass('d-block');
-                        $.each(response[0]['costs'], function(key, value) {
-                            $('#ongkir').append('<li class="list-group-item">' +
-                                response[0].code.toUpperCase() + ' : <strong>' +
-                                value.service + '</strong> - Rp. ' + value.cost[
-                                    0].value + ' (' + value.cost[0].etd +
-                                ' hari)</li>')
-                        });
+                let token = $("meta[name='csrf-token']").attr("content");
+                let city_origin = $('select[name=city_origin]').val();
+                let city_destination = $('select[name=city_destination]').val();
+                let courier = $('select[name=courier]').val();
+                let weight = $('#weight').val();
 
-                    }
+                if (isProcessing) {
+                    return;
                 }
+
+                isProcessing = true;
+                jQuery.ajax({
+                    url: "/ongkir",
+                    data: {
+                        _token: token,
+                        city_origin: city_origin,
+                        city_destination: city_destination,
+                        courier: courier,
+                        weight: weight,
+                    },
+                    dataType: "JSON",
+                    type: "POST",
+                    success: function(response) {
+                        isProcessing = false;
+                        if (response) {
+                            $('#ongkir').empty();
+                            $('.ongkir').addClass('d-block');
+                            $.each(response[0]['costs'], function(key, value) {
+                                $('#ongkir').append('<li class="list-group-item">' +
+                                    response[0].code.toUpperCase() + ' : <strong>' +
+                                    value.service + '</strong> - Rp. ' + value.cost[
+                                        0].value + ' (' + value.cost[0].etd +
+                                    ' hari)</li>')
+                            });
+
+                        }
+                    }
+                });
+
             });
 
         });

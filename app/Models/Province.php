@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Province extends Model
 {
     protected $guarded = [];
+
+    public function buyer()
+    {
+        return $this->hasMany(Buyer::class, 'idProvince');
+    }
 }
