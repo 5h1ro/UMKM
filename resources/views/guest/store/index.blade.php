@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="mt-1 align-items-center">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>{{ $seller->city }}</span>
+                                    <span>{{ $seller->address }}</span>
                                 </div>
                                 <div class="mt-2">
                                     <a href="#">

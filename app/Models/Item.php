@@ -37,4 +37,9 @@ class Item extends Model
     {
         return $this->belongsTo(Seller::class, 'idSeller');
     }
+
+    public function order()
+    {
+        return $this->hasOne(Order::class, 'idItem');
+    }
 }

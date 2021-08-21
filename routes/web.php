@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index']);
         // checkout
         Route::get('/checkout/{id}', [BuyController::class, 'checkout'])->name('checkout');
-        Route::get('/pay/{total}', [BuyController::class, 'pay'])->name('pay');
+        Route::get('/pay/{total}/{itemId}', [BuyController::class, 'pay'])->name('pay');
 
         // end checkout
     });

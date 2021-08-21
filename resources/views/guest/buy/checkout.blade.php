@@ -167,13 +167,15 @@
                                                             "</span></b>");
 
                                                         var price_total = parseInt($('#price').text());
+                                                        let itemId = {!! json_encode($itemId) !!};
                                                         var ongkir_total = parseInt($('#ongkir_price').text());
                                                         var total_fix = price_total + ongkir_total;
                                                         $('.total_fix').empty();
                                                         $(".total_fix").append("<b>Rp <span id='price'>" + total_fix +
                                                             "</span></b>");
                                                         var pay1 = document.getElementById('pay');
-                                                        pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
+                                                        pay1.href = "{{ url('pay', '') }}/" + total_fix + "/" + itemId +
+                                                            ""
                                                     });
                                                 }
                                             }
@@ -182,6 +184,7 @@
 
                                     $(".plus").click(function() {
                                         let price = {!! json_encode($price) !!};
+                                        let itemId = {!! json_encode($itemId) !!};
                                         var value = parseInt($(".total_order").val());
                                         var total = value + 1;
                                         var item_total = total * price;
@@ -195,12 +198,13 @@
                                         $('.total_fix').empty();
                                         $(".total_fix").append("<b>Rp <span id='price'>" + total_fix + "</span></b>");
                                         var pay1 = document.getElementById('pay');
-                                        pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
+                                        pay1.href = "{{ url('pay', '') }}/" + total_fix + "/" + itemId + ""
 
                                     });
 
                                     $(".minus").click(function() {
                                         let price = {!! json_encode($price) !!};
+                                        let itemId = {!! json_encode($itemId) !!};
                                         var value = parseInt($(".total_order").val());
                                         if (value > 1) {
                                             var total = value - 1;
@@ -215,12 +219,13 @@
                                             $('.total_fix').empty();
                                             $(".total_fix").append("<b>Rp <span id='price'>" + total_fix + "</span></b>");
                                             var pay1 = document.getElementById('pay');
-                                            pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
+                                            pay1.href = "{{ url('pay', '') }}/" + total_fix + "/" + itemId + ""
                                         }
                                     });
 
                                     $(".total_order").change(function() {
                                         let price = {!! json_encode($price) !!};
+                                        let itemId = {!! json_encode($itemId) !!};
                                         var value = parseInt($(".total_order").val());
                                         if (value >= 1) {
                                             var item_total = value * price;
@@ -234,7 +239,7 @@
                                             $('.total_fix').empty();
                                             $(".total_fix").append("<b>Rp <span id='price'>" + total_fix + "</span></b>");
                                             var pay1 = document.getElementById('pay');
-                                            pay1.href = "{{ route('pay', '') }}/" + total_fix + ""
+                                            pay1.href = "{{ url('pay', '') }}/" + total_fix + "/" + itemId + ""
                                         }
                                     });
                                 </script>

@@ -41,6 +41,11 @@ class Buyer extends Model
         return $this->belongsTo(User::class, 'idUser');
     }
 
+    public function order()
+    {
+        return $this->hasOne(Order::class, 'idBuyer');
+    }
+
     public const PAYMENT_CHANNELS = ['credit_card', 'mandiri_clickpay', 'cimb_clicks',
         'bca_klikbca', 'bca_klikpay', 'bri_epay', 'echannel', 'permata_va',
         'bca_va', 'bni_va', 'other_va', 'gopay', 'indomaret',

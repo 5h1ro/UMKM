@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buyer;
 use App\Models\Item;
+use App\Models\Order;
 use App\Models\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,8 @@ class BuyController extends Controller
         $city_destination = Buyer::first()->pluck('idCity');
         $weight = $item->weight;
         $price = $item->price;
-        return view('guest.buy.checkout', compact(['item','city_origin','city_destination','buyer','weight','price']));
+        $itemId = $item->id;
+        return view('guest.buy.checkout', compact(['item','city_origin','city_destination','buyer','weight','price','itemId']));
     }
 
     public function cart()
@@ -33,13 +35,20 @@ class BuyController extends Controller
         return view('guest.buy.cart');
     }
 
-    public function pay($total)
+    public function pay($total, $itemId)
     {
         $buyer = Buyer::first();
         $totals = (int)$total;
         $number = mt_rand(000, 999);
         $code = "UM".(string)($totals+$number);
         $this->_generatePaymentToken($buyer, $totals, $code);
+        Order::create([
+            'code'                => $code,
+            'idBuyer'             => $buyer->id,
+            'idItem'              => $itemId,
+            'link'                => $buyer->payment_url,
+            'total'               => $totals
+        ]);
         return Redirect::to($buyer->payment_url);
     }
     private function _generatePaymentToken($order, $totals, $code)
