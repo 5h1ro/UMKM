@@ -35,4 +35,38 @@ class Buyer extends Model
     {
         return $this->belongsTo(Province::class, 'idProvince');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'idUser');
+    }
+
+    public const PAYMENT_CHANNELS = ['credit_card', 'mandiri_clickpay', 'cimb_clicks',
+        'bca_klikbca', 'bca_klikpay', 'bri_epay', 'echannel', 'permata_va',
+        'bca_va', 'bni_va', 'other_va', 'gopay', 'indomaret',
+        'danamon_online', 'akulaku', ];
+
+    public const EXPIRY_DURATION = 7;
+    public const EXPIRY_UNIT     = 'days';
+
+    public const CHALLENGE  = 'challenge';
+    public const SUCCESS    = 'success';
+    public const SETTLEMENT = 'settlement';
+    public const PENDING    = 'pending';
+    public const DENY       = 'deny';
+    public const EXPIRE     = 'expire';
+    public const CANCEL     = 'cancel';
+
+    public const PAYMENTCODE = 'PAY';
+
+    public const CREATED   = 'created';
+    public const CONFIRMED = 'confirmed';
+    public const DELIVERED = 'delivered';
+    public const COMPLETED = 'completed';
+    public const CANCELLED = 'cancelled';
+
+    public const ORDERCODE = 'INV';
+
+    public const PAID   = 'paid';
+    public const UNPAID = 'unpaid';
 }
