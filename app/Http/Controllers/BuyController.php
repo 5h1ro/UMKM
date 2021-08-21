@@ -67,7 +67,6 @@ class BuyController extends Controller
         ];
 
         $snap = \Midtrans\Snap::createTransaction($params);
-        // dd($snap);exit;
 
         if ($snap->token) {
             $order->payment_token = $snap->token;
