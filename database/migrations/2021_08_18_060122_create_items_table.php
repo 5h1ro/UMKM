@@ -21,7 +21,8 @@ class CreateItemsTable extends Migration
             $table->string('weight');
             $table->integer('idCategory')->unsigned();
             $table->longText('detail');
-            $table->string('sold');
+            $table->integer('stock');
+            $table->integer('sold');
             $table->integer('idSeller')->unsigned();
             $table->timestamps();
         });

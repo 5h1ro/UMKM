@@ -82,148 +82,265 @@
         <!-- End Navbar -->
         <div class="container-fluid py-4" style="height: 87vh;">
             <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
+                <div class="col-12">
+                    {{-- <div class="card">
+                        <div class="card-header justify-content-between">
                             <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            $53,000
-                                            <span class="text-success text-sm font-weight-bolder">+55%</span>
-                                        </h5>
-                                    </div>
+                                <div class="col">
+                                    <h4>Export Table</h4>
                                 </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            2,300
-                                            <span class="text-success text-sm font-weight-bolder">+3%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            +3,462
-                                            <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            $103,430
-                                            <span class="text-success text-sm font-weight-bolder">+5%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-7 mb-lg-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="d-flex flex-column h-100">
-                                        <p class="mb-1 pt-2 text-bold">Built by developers</p>
-                                        <h5 class="font-weight-bolder">Soft UI Dashboard</h5>
-                                        <p class="mb-5">From colors, cards, typography to complex elements, you will
-                                            find the full documentation.</p>
-                                        <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto"
-                                            href="javascript:;">
-                                            Read More
-                                            <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                                    <div class="bg-gradient-primary border-radius-lg h-100">
-                                        <img src="{{ asset('img') }}/shapes/waves-white.svg"
-                                            class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                                        <div
-                                            class="position-relative d-flex align-items-center justify-content-center h-100">
-                                            <img class="w-100 position-relative z-index-2 pt-4"
-                                                src="{{ asset('img') }}/illustrations/rocket-white.png" alt="rocket">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card h-100 p-3">
-                        <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100"
-                            style="background-image: url('{{ asset('img') }}/ivancik.jpg');">
-                            <span class="mask bg-gradient-dark"></span>
-                            <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                                <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-                                <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It
-                                    is all about who take the opportunity first.</p>
-                                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto"
-                                    href="javascript:;">
-                                    Read More
-                                    <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                                <a href="#" class="btn btn-primary col-2">
+                                    <span class="fa fa-plus">
+                                    </span>Tambah Lowongan
                                 </a>
                             </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center w-2">
+                                                #
+                                            </th>
+                                            <th class="w-30">Name</th>
+                                            <th class="w-20">Detail</th>
+                                            <th>Price</th>
+                                            <th>Condition</th>
+                                            <th>Weight</th>
+                                            <th>Category</th>
+                                            <th>Sold</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($item as $item)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->detail }}</td>
+                                                <td>Rp. {{ number_format($item->price, 0, ',', '.') }}</td>
+                                                <td>{{ $item->condition }}</td>
+                                                <td>{{ $item->weight }}</td>
+                                                <td>{{ $item->category->name }}</td>
+                                                <td>{{ $item->sold }}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-info mr-1">Detail</a>
+                                                    <a href="#" class="btn btn-success mr-1">Edit</a>
+                                                    <a href="#" class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Name</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Detail</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Price</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Condition</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Weight</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Category</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Stock</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Sold</th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($item as $item)
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2">
+
+                                                    <div class="my-auto">
+                                                        <h6 class="mb-0 text-xs">{{ $loop->iteration }}.
+                                                            {{ $item->name }}
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->detail }}</p>
+                                            </td>
+                                            <td>
+                                                <span class="text-dark text-xs" style="font-weight: bold">Rp.
+                                                    {{ number_format($item->price, 0, ',', '.') }}</span>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->condition }}</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->weight }} gram</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->category->name }}</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->stock }}</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->sold }}</p>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <button type="button"
+                                                    class="btn bg-gradient-info text-secondary mb-0 btnInfo"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#modalIessage{{ $loop->iteration }}"
+                                                    id="btn{{ $loop->iteration }}">
+                                                    <i class="fa fa-info text-xs text-white" aria-hidden="true"></i>
+                                                </button>
+                                                <!-- Info Modal -->
+                                                <div class="modal fade" id="modalIessage{{ $loop->iteration }}"
+                                                    tabindex="-1" role="dialog" aria-labelledby="modalIessageTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Item</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">×</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="form-group align-content-start col">
+                                                                            <label for="name" class="col-form-label"
+                                                                                style="float: left">Name:</label>
+                                                                            <input type="text" class="form-control"
+                                                                                value="{{ $item->name }}" id="name"
+                                                                                name="name">
+                                                                        </div>
+                                                                        <div class="form-group col">
+                                                                            <label for="price" class="col-form-label"
+                                                                                style="float: left">Price:</label>
+                                                                            <input type="number" class="form-control"
+                                                                                value="{{ $item->price }}" id="price"
+                                                                                name="price"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="detail" class="col-form-label"
+                                                                            style="float: left">Detail:</label>
+                                                                        <textarea name="detail" id="detail"
+                                                                            class="form-control">{{ $item->detail }}</textarea>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="form-group col">
+                                                                            <label for="condition" class="col-form-label"
+                                                                                style="float: left">Condition:</label>
+                                                                            <select class="form-control" id="condition">
+                                                                                @if ($item->condition == 'Baru')
+                                                                                    <option value="Baru" selected>Baru
+                                                                                    </option>
+                                                                                    <option value="Bekas">Bekas</option>
+                                                                                @else
+                                                                                    <option value="Baru">Baru
+                                                                                    </option>
+                                                                                    <option value="Bekas" selected>Bekas
+                                                                                    </option>
+                                                                                @endif
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class=" form-group col">
+                                                                            <label for="weight" class="col-form-label"
+                                                                                style="float: left">Weight:</label>
+                                                                            <input type="number" class="form-control"
+                                                                                value="{{ $item->weight }}" id="weight"
+                                                                                name="weight"></input>
+                                                                        </div>
+                                                                        <div class="form-group col">
+                                                                            <label for="category" class="col-form-label"
+                                                                                style="float: left">Category:</label>
+                                                                            <select class="form-control" id="category">
+                                                                                @foreach ($category as $categories)
+                                                                                    @if ($item->category->id == $categories->id)
+                                                                                        <option
+                                                                                            value="{{ $categories->id }}"
+                                                                                            selected>
+                                                                                            {{ $categories->name }}
+                                                                                        </option>
+                                                                                    @else
+                                                                                        <option
+                                                                                            value="{{ $categories->id }}">
+                                                                                            {{ $categories->name }}
+                                                                                        </option>
+                                                                                    @endif
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class=" form-group col">
+                                                                            <label for="stock" class="col-form-label"
+                                                                                style="float: left">Stock:</label>
+                                                                            <input type="number" class="form-control"
+                                                                                value="{{ $item->stock }}" id="stock"
+                                                                                name="weight"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn bg-gradient-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn bg-gradient-primary">Send
+                                                                    message</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Info Modal -->
+                                                <button type="button" class="btn bg-gradient-danger text-secondary mb-0">
+                                                    <i class="fa fa-trash text-xs text-white" aria-hidden="true"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{-- <script>
+            var buttons = document
+                .getElementsByTagName("button");
+            for (var i = 0; i < buttons.length; i++) {
+                var button = buttons[i];
+                var id = document.getElementById("btn" + i);
+                console.log(id);
+                $(document).ready(function() {
+                    $("#btn" + i).click(function() {
+                        $("#modalIessage").modal();
+                    });
+                });
+            }
+        </script> --}}
         <footer class="footer pt-3">
             <div class="container-fluid">
                 <div class="row align-items-center justify-content-lg-between">

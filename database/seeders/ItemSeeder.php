@@ -21,7 +21,8 @@ class ItemSeeder extends Seeder
             'weight'           => '500',
             'idCategory'       => '4',
             'detail'           => 'Jati murni',
-            'sold'             => '2',
+            'stock'            => '2',
+            'sold'             => '0',
             'idSeller'         => '1',
         ]);
         $user->save();
@@ -33,7 +34,8 @@ class ItemSeeder extends Seeder
             'weight'           => '800',
             'idCategory'       => '4',
             'detail'           => 'Jati murni dengan motif jepara',
-            'sold'             => '100',
+            'stock'            => '100',
+            'sold'             => '0',
             'idSeller'         => '1',
         ]);
         $user->save();

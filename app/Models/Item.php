@@ -24,6 +24,7 @@ class Item extends Model
         'weight',
         'idCategory',
         'detail',
+        'stock',
         'sold',
         'idSeller'
     ];
