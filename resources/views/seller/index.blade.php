@@ -83,60 +83,161 @@
         <div class="container-fluid py-4" style="height: 87vh;">
             <div class="row">
                 <div class="col-12">
-                    {{-- <div class="card">
-                        <div class="card-header justify-content-between">
-                            <div class="row">
-                                <div class="col">
-                                    <h4>Export Table</h4>
-                                </div>
-                                <a href="#" class="btn btn-primary col-2">
-                                    <span class="fa fa-plus">
-                                    </span>Tambah Lowongan
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center w-2">
-                                                #
-                                            </th>
-                                            <th class="w-30">Name</th>
-                                            <th class="w-20">Detail</th>
-                                            <th>Price</th>
-                                            <th>Condition</th>
-                                            <th>Weight</th>
-                                            <th>Category</th>
-                                            <th>Sold</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($item as $item)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->detail }}</td>
-                                                <td>Rp. {{ number_format($item->price, 0, ',', '.') }}</td>
-                                                <td>{{ $item->condition }}</td>
-                                                <td>{{ $item->weight }}</td>
-                                                <td>{{ $item->category->name }}</td>
-                                                <td>{{ $item->sold }}</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-info mr-1">Detail</a>
-                                                    <a href="#" class="btn btn-success mr-1">Edit</a>
-                                                    <a href="#" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="card">
+                        <div class="row">
+                            <div class="col mt-3 mb-1 d-flex justify-content-start">
+                                <span class="ms-4" style="font-weight: bold; font-size: 18pt">My
+                                    Product</span>
+                            </div>
+                            <div class="col mt-3 mb-1 d-flex justify-content-end">
+                                <button type="button" class="btn bg-gradient-success text-secondary mb-0 me-4"
+                                    data-bs-toggle="modal" data-bs-target="#modalAdd">
+                                    <i class="fa fa-plus text-xs text-white" aria-hidden="true"></i>
+                                    <span style="color: white">Add
+                                        Product</span>
+                                </button>
+                                <!-- Add Modal -->
+                                <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog"
+                                    aria-labelledby="modalAddTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Item</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{ route('product.add') }}" method="POST"
+                                                    enctype="multipart/form-data" id="addForm">
+                                                    @csrf
+                                                    <div class="row">
+                                                        <div class="form-group align-content-start col">
+                                                            <label for="name" class="col-form-label"
+                                                                style="float: left">Name:</label>
+                                                            <input type="text" class="form-control" id="name" name="name">
+                                                        </div>
+                                                        <div class="form-group col">
+                                                            <label for="price" class="col-form-label"
+                                                                style="float: left">Price:</label>
+                                                            <input type="number" class="form-control" id="price"
+                                                                name="price"></input>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="detail" class="col-form-label"
+                                                            style="float: left">Detail:</label>
+                                                        <textarea name="detail" id="detail" class="form-control"></textarea>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col">
+                                                            <label for="condition" class="col-form-label"
+                                                                style="float: left">Condition:</label>
+                                                            <select class="form-control" name="condition" id="condition">
+                                                                <option value="Baru">Baru
+                                                                </option>
+                                                                <option value="Bekas">Bekas
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class=" form-group col">
+                                                            <label for="weight" class="col-form-label"
+                                                                style="float: left">Weight:</label>
+                                                            <input type="number" class="form-control" id="weight"
+                                                                name="weight"></input>
+                                                        </div>
+                                                        <div class="form-group col">
+                                                            <label for="category" class="col-form-label"
+                                                                style="float: left">Category:</label>
+                                                            <select class="form-control" id="category" name="category">
+                                                                @foreach ($category as $categories)
+                                                                    <option value="{{ $categories->id }}">
+                                                                        {{ $categories->name }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class=" form-group col">
+                                                            <label for="stock" class="col-form-label"
+                                                                style="float: left">Stock:</label>
+                                                            <input type="number" class="form-control" id="stock"
+                                                                name="stock"></input>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="col-form-label ms-1">Picture:</div>
+                                                <form method="post" action="{{ route('product.store') }}"
+                                                    enctype="multipart/form-data" class="form-control dropzone"
+                                                    id="dropzone">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn bg-gradient-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <input type="button" value="Submit" class="btn bg-gradient-success"
+                                                    id="saveButton" />
+                                                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                                {{-- Dropzone js --}}
+                                                <script src="{{ asset('js/plugins/dropzone.js') }}" type="text/javascript"></script>
+                                                <script type="text/javascript">
+                                                    Dropzone.options.dropzone = {
+                                                        maxFilesize: 12,
+                                                        renameFile: function(file) {
+                                                            var dt = new Date();
+                                                            var time = dt.getTime();
+                                                            return time + file.name;
+                                                        },
+                                                        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                                                        addRemoveLinks: true,
+                                                        timeout: 50000,
+                                                        removedfile: function(file) {
+                                                            var name = file.upload.filename;
+                                                            $.ajax({
+                                                                headers: {
+                                                                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                                                                },
+                                                                type: 'POST',
+                                                                url: '{{ url('image/delete') }}',
+                                                                data: {
+                                                                    filename: name
+                                                                },
+                                                                success: function(data) {
+                                                                    console.log("File has been successfully removed!!");
+                                                                },
+                                                                error: function(e) {
+                                                                    console.log(e);
+                                                                }
+                                                            });
+                                                            var fileRef;
+                                                            return (fileRef = file.previewElement) != null ?
+                                                                fileRef.parentNode.removeChild(file.previewElement) : void 0;
+                                                        },
+
+                                                        success: function(file, response) {
+                                                            console.log(response);
+                                                        },
+                                                        error: function(file, response) {
+                                                            return false;
+                                                        }
+                                                    };
+                                                </script>
+                                                <script type="text/javascript">
+                                                    $(document).ready(function() {
+                                                        $("#saveButton").click(function() {
+                                                            $("#addForm").submit();
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Add Modal -->
+                            </div>
+
+                        </div>
                         <div class="table-responsive">
                             <table class="table align-items-center mb-0">
                                 <thead>

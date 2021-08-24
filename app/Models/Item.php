@@ -26,6 +26,7 @@ class Item extends Model
         'detail',
         'stock',
         'sold',
+        'image',
         'idSeller'
     ];
 

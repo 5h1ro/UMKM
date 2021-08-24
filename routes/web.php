@@ -7,6 +7,7 @@ use App\Http\Controllers\CheckOngkirController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Seller\SellerController;
+use App\Http\Controllers\Seller\ProductController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Auth;
@@ -63,7 +64,6 @@ Route::middleware(['auth'])->group(function () {
         // checkout
         Route::get('/checkout/{id}', [BuyController::class, 'checkout'])->name('checkout');
         Route::get('/pay/{total}/{itemId}', [BuyController::class, 'pay'])->name('pay');
-
         // end checkout
     });
     Route::middleware(['admin'])->group(function () {
@@ -72,5 +72,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['seller'])->group(function () {
         Route::get('seller', [SellerController::class, 'index']);
+        // product
+        Route::post('/product/add', [ProductController::class, 'create'])->name('product.add');
+        Route::post('/product/store', [ProductController::class, 'fileStore'])->name('product.store');
     });
 });
