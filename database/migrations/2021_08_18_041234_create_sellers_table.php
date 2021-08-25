@@ -18,6 +18,12 @@ class CreateSellersTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('address');
+            $table->string('owner');
+            $table->string('number');
+            $table->string('image')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->unsignedInteger('idProvince')->nullable();
             $table->foreign('idProvince', 'province_id_fk_006')->references('id')->on('provinces');
             $table->unsignedInteger('idCity')->nullable();

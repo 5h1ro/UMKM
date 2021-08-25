@@ -13,4 +13,9 @@ class Province extends Model
     {
         return $this->hasMany(Buyer::class, 'idProvince');
     }
+
+    public function seller()
+    {
+        return $this->hasMany(Seller::class, 'idProvince');
+    }
 }

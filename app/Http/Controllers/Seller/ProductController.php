@@ -38,6 +38,7 @@ class ProductController extends Controller
         ]);
         return redirect()->to('seller');
     }
+
     public function fileStore(Request $request)
     {
         $user = auth()->user();

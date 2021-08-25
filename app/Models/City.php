@@ -13,4 +13,9 @@ class City extends Model
     {
         return $this->hasMany(Buyer::class, 'idCity');
     }
+
+    public function seller()
+    {
+        return $this->hasMany(Seller::class, 'idCity');
+    }
 }

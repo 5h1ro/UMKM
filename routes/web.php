@@ -85,5 +85,6 @@ Route::middleware(['auth'])->group(function () {
 
         // profile
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+        Route::post('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     });
 });

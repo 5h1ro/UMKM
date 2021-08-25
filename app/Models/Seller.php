@@ -21,6 +21,11 @@ class Seller extends Model
         'name',
         'description',
         'address',
+        'owner',
+        'image',
+        'facebook',
+        'twitter',
+        'instagram',
         'idProvince',
         'idCity',
         'idUser'
@@ -29,5 +34,20 @@ class Seller extends Model
     public function item()
     {
         return $this->hasMany(Item::class, 'idSeller');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'idUser');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'idProvince');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'idCity');
     }
 }
