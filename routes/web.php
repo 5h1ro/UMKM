@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Seller\SellerController;
 use App\Http\Controllers\Seller\ProductController;
+use App\Http\Controllers\Seller\ProfileController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Auth;
@@ -71,9 +72,18 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::middleware(['seller'])->group(function () {
-        Route::get('seller', [SellerController::class, 'index']);
+        Route::get('/seller', [SellerController::class, 'index'])->name('seller');
+
         // product
+        Route::get('/product', [SellerController::class, 'index'])->name('product');
         Route::post('/product/add', [ProductController::class, 'create'])->name('product.add');
         Route::post('/product/store', [ProductController::class, 'fileStore'])->name('product.store');
+        Route::post('/product/destroy', [ProductController::class, 'fileDestroy'])->name('product.destroy');
+        Route::post('/product/edit', [ProductController::class, 'edit'])->name('product.edit');
+        Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
+
+        // profile
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     });
 });
